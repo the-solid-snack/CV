@@ -1,0 +1,2 @@
+Added favicon
+started on qualifications

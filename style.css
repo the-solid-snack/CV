@@ -38,7 +38,12 @@ nav > ul {
     
 }
 
-/* BODY */
+/* MAIN */
+
+main {
+  margin: auto;
+  max-width: 750px;
+}
 
 .role-container {
   display: flex;
@@ -66,6 +71,7 @@ nav > ul {
 
 .role-responsibility {
   margin-left: 1rem;
+  margin-bottom: 2rem;
 }
 
 .divider {

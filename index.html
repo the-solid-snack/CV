@@ -9,33 +9,49 @@
   <meta name="author" content="Marco Andolfatto">
   <link rel="icon" type="image/x-icon" href="/images/images.jpg">
   <link rel="stylesheet" href="style.css">
+  <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet'>
   <script src="/app.js"></script>
 </head>
 
 <body>
-  <header>
-    <!-- To do : add JS to stick header to top of page on scroll --> 
+
+  <!-- NAVBAR -->
+
+  <nav id="navbar">
     <img id="logo" src="media/logo.jpg" atl="AM logo" />
     <h1>Marco's CV</h1>
-    <nav>
-      <ul>
-        <li><a href="#Experience">EXPERIENCE</a></li>
-        <li><a href="#Qualifications">QUALIFICATIONS</a></li>
-        <li><a href="#Skills">SKILLS</a></li>
-        <li><a href="mailto:jobs@andolfatto.co.uk">Email me</a></li>
-      </ul>
-    </nav>
-  </header>
-  
-   <main>
+    <ul>
+      <li><a href="#experience">EXPERIENCE</a></li>
+      <li><a href="#qualifications">QUALIFICATIONS</a></li>
+      <li><a href="#good-to-know">SKILLS</a></li>
+      <li><a href="mailto:jobs@andolfatto.co.uk">Email me</a></li>
+    </ul>
+  </nav>
+
+  <!-- MAIN -->
+
+  <main>
     <section id="introduction">
       <p>
-        This is obviously a bit of a work in progress ... I'm not actively looking for a job, I am teaching myself front end dev.
+        &emsp;In a recent effort to push my boundaries and acquire new skills, I created this CV 
+        using HTML and CSS. This project reflects my ambition and proactive 
+        nature, as I seek to expand my expertise in web development—an industry full of 
+        opportunities for growth. By building my CV from the ground up followgin the 
+        <span id="freecodecamp">freeCodeCamp
+          <a href="https://www.freecodecamp.org/" target="_blank"><img id="freeCodeCamp-logo" src="media\fcc_primary_small.jpg" /></a>
+          </span>
+         curriculum, I aim to showcase my technical abilities while demonstrating my commitment 
+        to continuous learning and self-improveme. My goal is to become proficient in these essential 
+        technologies, positioning myself for success in a thriving, fast-paced environment. 
+        Through this, I aim to drive my career forward, making meaningful contributions wherever 
+        I go.
       </p>
     </section>
+
     <section class="category">
-      <h2 id="Experience">Experience</h2>
-      <div class="role-description">
+
+      <!-- Experience template -->
+      <!-- <div class="role-description">
         <p class="role-container"><span class="position-name">Customer success manager</span><span class="position-date">Jan. 2022 - Present day</span></p>
         <p class="employer-container"><span class="employer-name">Insight</span><span class="employer-address">Remote, UK</span></p>
         <ul class="role-responsibility">
@@ -43,50 +59,68 @@
           <li>Delight clients</li>
           <li>KPIs, SLAs</li>
         </ul>
-      </div>
+      </div> -->
+
+      <h2 id="experience">Experience</h2>
+
       <div class="role-description">
-        <p class="role-container"><span class="position-name">Position</span><span class="position-date">Date from - Date to</span></p>
-        <p class="employer-container"><span class="employer-name">Employer name</span><span class="employer-address">employer address</span></p>
+        <p class="role-container"><span class="position-name">Customer success manager</span><span class="position-date">Jan. 2022 - Present day</span></p>
+        <p class="employer-container"><span class="employer-name"><a href="https://uk.insight.com/en_GB/home.html" target="_blank">Insight</a></span><span class="employer-address">Remote, UK</span></p>
         <ul class="role-responsibility">
-          <li>Be a good employee</li>
-          <li>Delight clients</li>
-          <li>KPIs, SLAs</li>
-        </ul>
-      </div><div class="role-description">
-        <p class="role-container"><span class="position-name">Position</span><span class="position-date">Date from - Date to</span></p>
-        <p class="employer-container"><span class="employer-name">Employer name</span><span class="employer-address">employer address</span></p>
-        <ul class="role-responsibility">
-          <li>Be a good employee</li>
-          <li>Delight clients</li>
-          <li>KPIs, SLAs</li>
-        </ul>
-      </div><div class="role-description">
-        <p class="role-container"><span class="position-name">Position</span><span class="position-date">Date from - Date to</span></p>
-        <p class="employer-container"><span class="employer-name">Employer name</span><span class="employer-address">employer address</span></p>
-        <ul class="role-responsibility">
-          <li>Be a good employee</li>
-          <li>Delight clients</li>
-          <li>KPIs, SLAs</li>
+          <li>Craft long-lasting relationships with key people client-side.</li>
+          <li>Onboard, monitor usage and engagement of strategic customers in EMEA.</li>
+          <li>Provide continual proactive support and promote customer awareness.</li>
+          <li>Cooperate with different teams (Credit, Sales, Tech, Legal) to drive value and
+            minimise lead time. Takeover with a ‘can do’ attitude when needed.</li>
+          <li>Provide tailored services (FinOps, technical help, optimisation) and learn by doing.</li>
+          <li>Take active part in change management, technical migrations and Cloud
+            optimisation (Azure, 365, On-prem licensing).</li>
         </ul>
       </div>
-    </section>
+
+      <div class="role-description">
+        <p class="role-container"><span class="position-name">Advocate coach</span><span class="position-date">Jul. 2021 - Jan. 2022</span></p>
+        <p class="employer-container"><span class="employer-name"><a href="https://www.concentrix.com/en-gb/" target="_blank">CONCENTRIX</a></span><span class="employer-address">Remote, UK</span></p>
+        <ul class="role-responsibility">
+          <li>Report to top management EMEA on team performance and progress against
+            aggressive monthly objectives, some of which doubled YoY</li>
+          <li>Conduct performance reviews, providing feedback and coaching to improve team
+            performance.</li>
+          <li>Maintain all responsibilities involved in previous role.</li>
+        </ul>
+
+      </div><div class="role-description">
+        <p class="role-container"><span class="position-name">Technical pre-sales specialist</span><span class="position-date">Nov. 2019 - Aug. 2021</span></p>
+        <p class="employer-container"><span class="employer-name"><a href="https://www.concentrix.com/en-gb/" target="_blank">CONCENTRIX</a></span><span class="employer-address">Remote, UK</span></p>
+        <ul class="role-responsibility">
+          <li>Rated >4.5/5 consistently over 1+ year and thousands of client interactions.</li>
+          <li>Reply to technical enquiries from customers and Partners in French and English via
+            phone, email, and chat.</li>
+          <li>Provide sales support to channel, end users and consultants, constantly
+            overachieving target.</li>
+          <li>Propose technical solutions to satisfy customer needs including working with third
+            party suppliers when required.</li>
+        </ul>
+      </section> 
+    <!-- QUALIFICATIONS -->
+
     <section>
       <h2 id="qualifications">Qualifications</h2>
       <h3 class="degree">Microsoft</h3>
       <p>AZ:900</p>
       <p>MS:900</p>
       <p>MTA</p>
+      <h3 class="degree">Degree</h3>
       <p>Bachelor's Degree - law</p>
     </section>
+
+    <!-- GOOD TO KNOW -->
+
     <section>
-      <h2 id="skills">Good to know</h2>
+      <h2 id="good-to-know">Good to know</h2>
 
     </section>
-    <br/>
-    <br/>
-    <br/>
-    <div class="divider"></div>
-    <p>It's alive! Aliiiiiiive!</p>
+
   </main>
 </body>
 

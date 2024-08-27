@@ -8,11 +8,11 @@
 }
 
 :root {
-  --html-color: rgb(240, 203, 190);
-  --main-background-color: red;
-  --navbar-background-color: rgb(240, 95, 95);
+  --html-color: #ffffff;
+  --main-background-color: rgb(250, 219, 219);
+  --navbar-background-color: white;
   --navbar-text: rgb(37, 28, 28);
-  --section-title-color: orange;
+  --section-title-color: black;
 }
 
 body {
@@ -28,10 +28,11 @@ a {
 }
 
 li {
-  list-style-type: none;
+  
 }
 
-/* ADD MEDIA QUERY */
+/* MEDIA QUERY */
+
 
 /* HEADER */
 
@@ -44,47 +45,54 @@ li {
     justify-content: space-between;
     position: fixed;
     top: 0;
-    z-index: 999;
+    z-index: 9;
+    border-bottom: 2px solid #2b2b2b;  
 }
 
-#logo {
-  height: 80px;
-  margin: 0 3rem 0 0;
+h1 {
+  color: var(--navbar-text);
+  font-size: 30px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+#navbar a:hover {
+  color: red;
+}
+
+#navbar a:visited, nav > ul > li > a {
+  color: var(--navbar-text);
 }
 
 nav > ul {
     display: flex; 
 }
 
-  nav > ul > li {
-    display: block;
-    padding: 1em;
-}
-
-nav > ul > li > a {
-  color: var(--navbar-text);
-}
-
-h1 {
-    color: var(--navbar-text);
-    font-size: 30px;
-    margin-right: 40%;
-    text-align: center;
+nav > ul > li {
+  display: block;
+  padding: 1em;
 }
 
 /* MAIN */
 
 main {
   margin: 80px auto 0;
-  max-width: 750px;
-  background: var(--main-background-color)
+  max-width: 800px;
+  background: var(--main-background-color);
 }
 
 #introduction {
   display: flex;
   align-items: center;
   padding: 80px 0 80px 0;
-  height: calc(100vh - 80px);
+  height: calc(100vh - 70px);
+}
+
+#introdution-p {
+  margin: 0 5%;
+  padding: 2rem;
+  background-color: white;
+  border: 1px solid black;
 }
 
 #introduction p {
@@ -105,7 +113,7 @@ main {
 }
 
 h2 {
-  padding: 80px;
+  padding: 80px 0 35px 35px;
   color: var(--section-title-color);
 }
 
@@ -120,14 +128,27 @@ h2 {
 .employer-container {
   font-size: 15px;
   padding-left: 2rem;
+  margin: 1rem 0;
 }
 
-.employer-name {
+position-name {
+  font-weight: bold;
+}
+
+.employer-name a {
   padding-right: 15px;
+  font-weight: bolder;
+  color: black;
 }
 
-.employer-address {
-  color: green;
+.employer-name a:hover {
+  color: orangered;
+}
+
+.position-date {
+  font-weight: 1;
+  font-style: italic;
+  font-size: medium;
 }
 
 .role-container > span {
@@ -135,9 +156,17 @@ h2 {
 }
 
 .role-responsibility {
-  margin-left: 1rem;
-  margin-bottom: 2rem;
+  margin: 0 3rem 2rem 3rem;
+  line-height: 1.5rem;
+  list-style-type: none;
 }
+
+.role-responsibility li {
+  margin: 4px 0;
+  padding-left: 5px;
+  border-left: 2px solid red;
+}
+
 
 /* EDUCATION */
 

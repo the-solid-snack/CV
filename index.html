@@ -18,13 +18,13 @@
   <!-- NAVBAR -->
 
   <nav id="navbar">
-    <img id="logo" src="media/logo.jpg" atl="AM logo" />
+    <img id="logo" src="media/logo.jpg" atl="AM logo" style="height: 78px" />
     <h1>Marco's CV</h1>
     <ul>
       <li><a href="#experience">EXPERIENCE</a></li>
       <li><a href="#qualifications">QUALIFICATIONS</a></li>
       <li><a href="#good-to-know">SKILLS</a></li>
-      <li><a href="mailto:jobs@andolfatto.co.uk">Email me</a></li>
+      <li><a href="mailto:jobs@andolfatto.co.uk">@</a></li>
     </ul>
   </nav>
 
@@ -32,7 +32,7 @@
 
   <main>
     <section id="introduction">
-      <p>
+      <p id="introdution-p">
         &emsp;In a recent effort to push my boundaries and acquire new skills, I created this CV 
         using HTML and CSS. This project reflects my ambition and proactive 
         nature, as I seek to expand my expertise in web development—an industry full of 
@@ -41,11 +41,12 @@
           <a href="https://www.freecodecamp.org/" target="_blank"><img id="freeCodeCamp-logo" src="media\fcc_primary_small.jpg" /></a>
           </span>
          curriculum, I aim to showcase my technical abilities while demonstrating my commitment 
-        to continuous learning and self-improveme. My goal is to become proficient in these essential 
+        to continuous learning and self-improvement. My goal is to become proficient in these essential 
         technologies, positioning myself for success in a thriving, fast-paced environment. 
         Through this, I aim to drive my career forward, making meaningful contributions wherever 
         I go.
       </p>
+
     </section>
 
     <section class="category">
@@ -79,7 +80,7 @@
       </div>
 
       <div class="role-description">
-        <p class="role-container"><span class="position-name">Advocate coach</span><span class="position-date">Jul. 2021 - Jan. 2022</span></p>
+        <h3 class="role-container"><span class="position-name">Advocate coach</span><span class="position-date">Jul. 2021 - Jan. 2022</span></h3>
         <p class="employer-container"><span class="employer-name"><a href="https://www.concentrix.com/en-gb/" target="_blank">CONCENTRIX</a></span><span class="employer-address">Remote, UK</span></p>
         <ul class="role-responsibility">
           <li>Report to top management EMEA on team performance and progress against
@@ -88,9 +89,10 @@
             performance.</li>
           <li>Maintain all responsibilities involved in previous role.</li>
         </ul>
-
-      </div><div class="role-description">
-        <p class="role-container"><span class="position-name">Technical pre-sales specialist</span><span class="position-date">Nov. 2019 - Aug. 2021</span></p>
+      </div>
+      
+      <div class="role-description">
+        <h3 class="role-container"><span class="position-name">Technical pre-sales specialist</span><span class="position-date">Nov. 2019 - Aug. 2021</span></h3>
         <p class="employer-container"><span class="employer-name"><a href="https://www.concentrix.com/en-gb/" target="_blank">CONCENTRIX</a></span><span class="employer-address">Remote, UK</span></p>
         <ul class="role-responsibility">
           <li>Rated >4.5/5 consistently over 1+ year and thousands of client interactions.</li>
@@ -101,10 +103,11 @@
           <li>Propose technical solutions to satisfy customer needs including working with third
             party suppliers when required.</li>
         </ul>
-      </section> 
+      </section>
+      
     <!-- QUALIFICATIONS -->
 
-    <section>
+    <section id="category">
       <h2 id="qualifications">Qualifications</h2>
       <h3 class="degree">Microsoft</h3>
       <p>AZ:900</p>
@@ -116,9 +119,17 @@
 
     <!-- GOOD TO KNOW -->
 
-    <section>
+    <section id="category">
       <h2 id="good-to-know">Good to know</h2>
+      <h3>Skills</h3>
+      <!-- Add a table here with soft skills / hard skills -->
+      <ul>
+        <li>Azure FinOps</li>
+        <li>Git</li>
+        <li>HTML & CSS</li>
+        <li>JavaScript</li>
 
+      </ul>
     </section>
 
   </main>

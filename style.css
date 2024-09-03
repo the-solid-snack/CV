@@ -143,7 +143,7 @@ main {
   display: flex;
   align-items: center;
   padding: 80px 0 80px 0;
-  height: calc(100vh - 70px);
+  height: calc(100vh - var(--header-height));
 }
 
 #introdution-p {
@@ -228,7 +228,10 @@ position-name {
 
 .qual-item {
   padding-left: 2rem;
-  
+}
+
+.qual-item li {
+  margin: .5rem auto;
 }
 
 .space {
@@ -244,7 +247,7 @@ position-name {
   border-top: 1px solid black;
   z-index: 9;
   position: relative;
-  bottom: 0;
+  bottom: calc(0 - .5rem);
 }
 
 #footnote {

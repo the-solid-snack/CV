@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<title>OG image source</title>
+<!--
+  Source for assets/og.png (1200x630) and assets/apple-touch-icon.png (180x180).
+  Regenerate with headless Chrome, from the repo root, with a static server running:
+
+    chrome --headless=old --disable-gpu --hide-scrollbars --window-size=1200,630 \
+      --screenshot=assets/og.png http://localhost:PORT/assets/og-source.html
+
+    chrome --headless=old --disable-gpu --hide-scrollbars --window-size=180,180 \
+      --screenshot=assets/apple-touch-icon.png http://localhost:PORT/assets/og-source.html#icon
+-->
+<style>
+@font-face {
+  font-family: "Bricolage Grotesque";
+  font-weight: 400 800;
+  font-stretch: 100%;
+  src: url("fonts/bricolage-grotesque-latin.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Schibsted Grotesk";
+  font-weight: 400 700;
+  src: url("fonts/schibsted-grotesk-latin.woff2") format("woff2");
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  width: 1200px;
+  height: 630px;
+  background: #08251C;
+  color: #F0E7D2;
+  font-family: "Schibsted Grotesk", system-ui, sans-serif;
+  overflow: hidden;
+  position: relative;
+}
+.ghost {
+  position: absolute;
+  right: -60px;
+  top: -110px;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-weight: 800;
+  font-size: 560px;
+  line-height: 0.7;
+  color: rgba(240, 231, 210, 0.05);
+}
+.pad { position: relative; padding: 72px 80px; height: 100%; display: flex; flex-direction: column; justify-content: space-between; }
+.kicker { display: flex; align-items: center; gap: 16px; font-size: 20px; font-weight: 600; letter-spacing: 0.28em; text-transform: uppercase; color: #C6F24D; }
+.dot { width: 16px; height: 16px; border-radius: 50%; background: #C6F24D; }
+h1 { margin: 0; font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: 138px; line-height: 0.82; letter-spacing: -0.055em; text-transform: uppercase; }
+.stats { display: flex; gap: 56px; border-top: 3px solid #F0E7D2; padding-top: 26px; }
+.stat b { display: block; font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: 54px; line-height: 1; letter-spacing: -0.04em; color: #C6F24D; }
+.stat span { display: block; margin-top: 8px; font-size: 17px; letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap; color: rgba(240, 231, 210, 0.72); }
+
+</style>
+<script>
+  // The #icon fragment switches this page into a square app-icon layout.
+  if (location.hash === "#icon") {
+    document.documentElement.setAttribute("data-icon", "");
+  }
+</script>
+<style>
+html[data-icon] body { width: 180px; height: 180px; }
+html[data-icon] .pad,
+html[data-icon] .ghost { display: none; }
+html[data-icon] body::after {
+  content: "MA";
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-weight: 800;
+  font-size: 86px;
+  letter-spacing: -0.06em;
+  color: #C6F24D;
+}
+</style>
+</head>
+<body>
+  <div class="ghost">MA</div>
+  <div class="pad">
+    <div>
+      <div class="kicker"><span class="dot"></span>Customer Success · Technical CS for B2B SaaS</div>
+      <h1>Marco<br>Andolfatto</h1>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>107%</b><span>NRR on own book</span></div>
+      <div class="stat"><b>$30M</b><span>ARR owned, FR &amp; BE</span></div>
+      <div class="stat"><b>18/19</b><span>Logos retained</span></div>
+      <div class="stat"><b>FR·EN</b><span>Both languages</span></div>
+    </div>
+  </div>
+</body>
+</html>

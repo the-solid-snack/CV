@@ -27,7 +27,11 @@
 
   var STORE_KEY = "cv.contact.sends";
 
-  /* --- Glossary ----------------------------------------------------------- */
+  /* --- Glossary ------------------------------------------------------------
+     Drafted during design rather than written by Marco, so the handoff flagged
+     them as needing his sign-off before launch. Reviewed and approved as they
+     stand, 18 September 2026.
+     ------------------------------------------------------------------------ */
 
   var GLOSSARY = {
     arr: ["ARR", "Annual recurring revenue — the yearly value of subscription contracts, the standard unit of size in SaaS."],

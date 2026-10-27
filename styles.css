@@ -327,6 +327,53 @@ button {
   color: var(--lime);
 }
 
+/* Language switch: two plain links, the current page filled. */
+.lang {
+  display: inline-flex;
+  margin-left: auto;
+}
+
+.lang__link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 40px;
+  padding: 0 calc(12px - 0.2em) 0 12px; /* offsets the trailing letter-spacing */
+  border: 1px solid var(--lime-40);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+}
+
+.lang__link + .lang__link {
+  border-left: none;
+}
+
+.lang__link[aria-current="page"] {
+  background: var(--lime);
+  border-color: var(--lime);
+  color: var(--forest);
+}
+
+.lang__link:hover {
+  border-color: var(--chalk);
+}
+
+.lang__link[aria-current="page"]:hover {
+  color: var(--forest);
+}
+
+/* Phones: the kicker already wraps, so lift the switch into the top padding
+   rather than giving the eyebrow a third line. */
+@media (max-width: 640px) {
+  .lang {
+    position: absolute;
+    top: -52px;
+    right: 0;
+  }
+}
+
 .hero__name {
   margin: 0;
   font-family: var(--display);
@@ -1053,6 +1100,7 @@ button {
   .progress,
   .ticker,
   .hero__ghost,
+  .lang,
   .role__toggle,
   #expand-all,
   .skip-link,

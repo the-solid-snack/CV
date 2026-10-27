@@ -27,23 +27,90 @@
 
   var STORE_KEY = "cv.contact.sends";
 
+  /* --- Language ------------------------------------------------------------
+     One script for both pages; <html lang> picks the strings. The French page
+     lives at /fr/ and addresses visitors as "vous".
+     ------------------------------------------------------------------------ */
+
+  var LANG = (document.documentElement.lang || "en").slice(0, 2) === "fr" ? "fr" : "en";
+
+  // French typography: narrow no-break space before ; ! ? and %, no-break before :
+  var NNBSP = " ";
+
+  var STRINGS = {
+    en: {
+      more: "More detail",
+      less: "Less",
+      expandAll: "Expand all",
+      collapseAll: "Collapse all",
+      noteMailto: "Opens your mail app with the message ready — nothing is stored here.",
+      missing: "Name, email and a message, please.",
+      tooShort: "A little more detail would help — ten characters minimum.",
+      sentHoneypot: "Thanks — message sent.",
+      tooFast: "That was quick — give it a couple of seconds and press send again.",
+      dailyCap: "You have sent a few messages today already. Mail me directly at ",
+      cooldown: function (s) { return "Message already on its way. You can send another in " + s + " seconds."; },
+      opening: "Opening your mail app…",
+      sending: "Sending…",
+      sent: function (email) { return "Thanks — that is in my inbox. I will reply to " + email + "."; },
+      failedBefore: "That did not go through. Mail me directly at ",
+      failedAfter: " and the message will come with you.",
+      send: "Send message"
+    },
+    fr: {
+      more: "Plus de détails",
+      less: "Moins",
+      expandAll: "Tout déplier",
+      collapseAll: "Tout replier",
+      noteMailto: "Ouvre votre messagerie avec le message prêt — rien n’est stocké ici.",
+      missing: "Un nom, un e-mail et un message, s’il vous plaît.",
+      tooShort: "Un peu plus de détails aideraient — dix caractères minimum.",
+      sentHoneypot: "Merci — message envoyé.",
+      tooFast: "C’était rapide — patientez quelques secondes et renvoyez.",
+      dailyCap: "Vous avez déjà envoyé plusieurs messages aujourd’hui. Écrivez-moi directement à ",
+      cooldown: function (s) { return "Message déjà en route. Vous pourrez en envoyer un autre dans " + s + " secondes."; },
+      opening: "Ouverture de votre messagerie…",
+      sending: "Envoi…",
+      sent: function (email) { return "Merci — c’est bien arrivé. Je vous répondrai à " + email + "."; },
+      failedBefore: "L’envoi a échoué. Écrivez-moi directement à ",
+      failedAfter: ", le message est déjà prérempli.",
+      send: "Envoyer le message"
+    }
+  }[LANG];
+
   /* --- Glossary ------------------------------------------------------------
      Drafted during design rather than written by Marco, so the handoff flagged
-     them as needing his sign-off before launch. Reviewed and approved as they
-     stand, 18 September 2026.
+     them as needing his sign-off before launch. English approved as it stands,
+     18 September 2026. The PCB entry and the French translations were added
+     27 October 2026 and still need his sign-off.
      ------------------------------------------------------------------------ */
 
   var GLOSSARY = {
-    arr: ["ARR", "Annual recurring revenue — the yearly value of subscription contracts, the standard unit of size in SaaS."],
-    nrr: ["Net revenue retention", "Revenue kept from existing customers over a period, counting expansion and upsell minus churn and downgrades. Above 100% means the same customers spend more than they did a year ago."],
-    ems: ["EMS", "Electronics manufacturing services — contract manufacturers who assemble circuit boards and products for the companies that design them."],
-    oem: ["OEM", "Original equipment manufacturer — the company that designs and sells the product, and buys assembly from an EMS."],
-    pcba: ["PCBA", "Printed circuit board assembly — a bare board with its components populated and soldered."],
-    bom: ["BOM", "Bill of materials — the line-by-line list of every component a product needs, with quantities and part numbers. Pricing and sourcing all hang off it."],
-    mcp: ["MCP", "Model Context Protocol — an open standard that lets AI assistants call a product's own tools and data, so small purpose-built applets can be assembled on top of a platform."],
-    qbr: ["QBR", "Quarterly business review — the recurring executive meeting where a vendor and customer review value delivered and agree what happens next."],
-    finops: ["FinOps", "The practice of managing cloud spend as an ongoing discipline: visibility, right-sizing, commitment purchases, and accountability for the bill."]
-  };
+    en: {
+      arr: ["ARR", "Annual recurring revenue — the yearly value of subscription contracts, the standard unit of size in SaaS."],
+      nrr: ["Net revenue retention", "Revenue kept from existing customers over a period, counting expansion and upsell minus churn and downgrades. Above 100% means the same customers spend more than they did a year ago."],
+      ems: ["EMS", "Electronics manufacturing services — contract manufacturers who assemble circuit boards and products for the companies that design them."],
+      oem: ["OEM", "Original equipment manufacturer — the company that designs and sells the product, and buys assembly from an EMS."],
+      pcb: ["PCB", "Printed circuit board — the bare board, before any components are fitted."],
+      pcba: ["PCBA", "Printed circuit board assembly — a bare board with its components populated and soldered."],
+      bom: ["BOM", "Bill of materials — the line-by-line list of every component a product needs, with quantities and part numbers. Pricing and sourcing all hang off it."],
+      mcp: ["MCP", "Model Context Protocol — an open standard that lets AI assistants call a product's own tools and data, so small purpose-built applets can be assembled on top of a platform."],
+      qbr: ["QBR", "Quarterly business review — the recurring executive meeting where a vendor and customer review value delivered and agree what happens next."],
+      finops: ["FinOps", "The practice of managing cloud spend as an ongoing discipline: visibility, right-sizing, commitment purchases, and accountability for the bill."]
+    },
+    fr: {
+      arr: ["ARR", "Annual recurring revenue, ou revenu annuel récurrent — la valeur annuelle des contrats d’abonnement, l’unité de mesure standard de la taille d’un SaaS."],
+      nrr: ["Rétention nette du revenu (NRR)", "Le revenu conservé auprès des clients existants sur une période, expansion et upsell compris, moins le churn et les réductions de contrat. Au-dessus de 100" + NNBSP + "%, les mêmes clients dépensent plus qu’un an auparavant."],
+      ems: ["EMS", "Electronics manufacturing services — les sous-traitants en fabrication électronique, qui assemblent cartes et produits pour les entreprises qui les conçoivent."],
+      oem: ["OEM", "Original equipment manufacturer — l’entreprise qui conçoit et vend le produit, et en confie l’assemblage à un EMS."],
+      pcb: ["PCB", "Printed circuit board, ou circuit imprimé — la carte nue, avant le montage des composants."],
+      pcba: ["PCBA", "Printed circuit board assembly — un circuit imprimé dont les composants sont montés et soudés."],
+      bom: ["BOM", "Bill of materials, ou nomenclature — la liste ligne par ligne de chaque composant d’un produit, avec quantités et références. Prix et sourcing en dépendent entièrement."],
+      mcp: ["MCP", "Model Context Protocol — un standard ouvert qui permet aux assistants IA d’appeler les outils et les données d’un produit, pour assembler de petites applications sur mesure par-dessus une plateforme."],
+      qbr: ["QBR", "Quarterly business review — la revue trimestrielle avec la direction du client, où l’on fait le bilan de la valeur apportée et où l’on décide de la suite."],
+      finops: ["FinOps", "La gestion des dépenses cloud comme une discipline continue : visibilité, dimensionnement, engagements d’achat et responsabilité sur la facture."]
+    }
+  }[LANG];
 
   /* --- Scroll progress ---------------------------------------------------- */
 
@@ -85,7 +152,7 @@
       panel.setAttribute("data-open", open ? "true" : "false");
       panel.inert = !open;
       var label = button.querySelector(".role__toggle-label");
-      if (label) label.textContent = open ? "Less" : "More detail";
+      if (label) label.textContent = open ? STRINGS.less : STRINGS.more;
     }
 
     function syncAll() {
@@ -93,7 +160,7 @@
       var every = toggles.every(function (t) {
         return t.getAttribute("aria-expanded") === "true";
       });
-      all.textContent = every ? "Collapse all" : "Expand all";
+      all.textContent = every ? STRINGS.collapseAll : STRINGS.expandAll;
       all.setAttribute("aria-expanded", every ? "true" : "false");
     }
 
@@ -263,7 +330,7 @@
     var configured = CONTACT.accessKey && CONTACT.accessKey.indexOf("PASTE_") !== 0;
 
     if (!configured && note) {
-      note.textContent = "Opens your mail app with the message ready — nothing is stored here.";
+      note.textContent = STRINGS.noteMailto;
     }
 
     function say(text, tone, html) {
@@ -294,38 +361,38 @@
         return;
       }
       if (!name || !email || !message) {
-        say("Name, email and a message, please.", "error");
+        say(STRINGS.missing, "error");
         return;
       }
       if (message.length < 10) {
-        say("A little more detail would help — ten characters minimum.", "error");
+        say(STRINGS.tooShort, "error");
         return;
       }
 
       // Honeypots: a real person leaves both of these alone.
       if (form.website.value || form.botcheck.checked) {
-        say("Thanks — message sent.", "ok");
+        say(STRINGS.sentHoneypot, "ok");
         form.reset();
         return;
       }
 
       // Time trap.
       if ((Date.now() - openedAt) / 1000 < CONTACT.minSecondsOnPage) {
-        say("That was quick — give it a couple of seconds and press send again.", "error");
+        say(STRINGS.tooFast, "error");
         return;
       }
 
       // Volume limiter.
       var sends = readSends();
       if (sends.length >= CONTACT.maxPerDay) {
-        say("You have sent a few messages today already. Mail me directly at " +
+        say(STRINGS.dailyCap +
           '<a href="mailto:' + CONTACT.mailto + '">' + CONTACT.mailto + "</a>.", "error", true);
         return;
       }
       var last = sends.length ? sends[sends.length - 1] : 0;
       var wait = Math.ceil((CONTACT.cooldownSeconds * 1000 - (Date.now() - last)) / 1000);
       if (last && wait > 0) {
-        say("Message already on its way. You can send another in " + wait + " seconds.", "error");
+        say(STRINGS.cooldown(wait), "error");
         return;
       }
 
@@ -333,14 +400,14 @@
       if (!configured) {
         recordSend();
         window.location.href = mailtoHref(name, email, message);
-        say("Opening your mail app…", "ok");
+        say(STRINGS.opening, "ok");
         return;
       }
 
       sending = true;
       submit.disabled = true;
-      submit.textContent = "Sending…";
-      say("Sending…", null);
+      submit.textContent = STRINGS.sending;
+      say(STRINGS.sending, null);
 
       fetch(CONTACT.endpoint, {
         method: "POST",
@@ -365,20 +432,20 @@
           if (data && data.success) {
             recordSend();
             form.reset();
-            say("Thanks — that is in my inbox. I will reply to " + email + ".", "ok");
+            say(STRINGS.sent(email), "ok");
           } else {
             throw new Error((data && data.message) || "Send failed");
           }
         })
         .catch(function () {
-          say("That did not go through. Mail me directly at " +
+          say(STRINGS.failedBefore +
             '<a href="' + mailtoHref(name, email, message) + '">' + CONTACT.mailto +
-            "</a> and the message will come with you.", "error", true);
+            "</a>" + STRINGS.failedAfter, "error", true);
         })
         .then(function () {
           sending = false;
           submit.disabled = false;
-          submit.textContent = "Send message";
+          submit.textContent = STRINGS.send;
         });
     });
   }

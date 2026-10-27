@@ -118,9 +118,14 @@ a:hover {
   text-transform: uppercase;
 }
 
+/* Links and the button are both flex boxes so their labels centre the same
+   way; a button centres its text by default, a link would sit at the top. */
 .toolbar a,
 .toolbar button {
+  display: inline-flex;
+  align-items: center;
   font: inherit;
+  line-height: 1.2;
   letter-spacing: inherit;
   text-transform: inherit;
   padding: 10px 16px;
